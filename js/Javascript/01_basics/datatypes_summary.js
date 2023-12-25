@@ -28,3 +28,24 @@ const myFunction = function(){
 }
 myFunction();
 
+// **************************************
+
+// Stack (Primitve), Heap(Non-Primitive)
+
+let myChannel = "markiplier"
+
+let anotherChannel = myChannel //gives a copy of myChannel to anotherChannel (stack)
+anotherChannel = "ksi" 
+
+console.log(myChannel);
+console.log(anotherChannel);
+
+let userOne = {
+    email: "user1@gmail",
+    id: 123,
+}
+
+let userTwo = userOne // gives direct reference of userOne (heap)
+userTwo.email = "user2@yahoo"
+console.log(userOne.email);
+console.log(userTwo.email);
