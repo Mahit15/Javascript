@@ -57,3 +57,25 @@ console.log(Object.values(tinderUser)); //returns the values as an array
 console.log(Object.entries(tinderUser)); //returns key-values as an array
 
 console.log(tinderUser.hasOwnProperty('isLogged')); //to check if a property is present
+
+//*********De-structuring********//
+
+const course = {
+    courseName: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+// course.courseInstructor - normal way
+const {courseInstructor: instructor} = course
+// console.log(courseInstructor); //syntactic sugar, same output as normal way
+console.log(instructor);
+
+// API structure(JSON)
+// {
+//     "name": "hitesh",
+//     "courseName": "js in hindi",
+//     "price": "free"
+// }
+
+// API can also be in the form of array of objects 
+
