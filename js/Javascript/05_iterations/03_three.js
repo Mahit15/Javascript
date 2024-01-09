@@ -1,5 +1,5 @@
 // for of 
-
+// for iterating arrays, doesn't work for objects
 // ["", "", "", ""]
 // [{}, {}, {}, {}] array of objects
 
