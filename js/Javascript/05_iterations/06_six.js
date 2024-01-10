@@ -34,7 +34,7 @@ const books = [
     { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
     { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
   ];
-  
+  // filter returns values that pass a test
   let userBooks = books.filter( (book) => book.genre === 'History')
   
   userBooks = books.filter( (book) => {return book.publish >= 1995})
