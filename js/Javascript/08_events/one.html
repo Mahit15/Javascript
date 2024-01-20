@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML events</title>
+</head>
+<body style="background-color: #414141;">
+    <h2 style="color: aqua;">Amazing images</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked')
+    // } not the best approach as it only provides onclick functionality
+    //read about these
+    // types, timestamp, defaultPrevented()
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('owl').addEventListener('click', function(event){
+        //alert('owl clicked')
+       // console.log(event)
+    // }, false) // the third parameter is false by default
+    // document.getElementById('images').addEventListener('click', function(event){
+    //     console.log("inside ul");
+    // }, false)
+    // third parameter - event propagation
+    // false - event bubbling mode(bottom to top) (inner element to outer)
+    // true - event capturing mode(top to bottom)
+    // document.getElementById('owl').addEventListener('click', function(event){
+    //     console.log("owl clicked");
+    //     event.stopPropagation() // stops event from propagating to outer elements
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function(event){
+    //     console.log("google clicked")
+    //     event.preventDefault()
+    // }, false)
+    
+    // to remove a picture when it is clicked
+    document.getElementById('images').addEventListener('click', function(event){
+        console.log(event.target.tagName);
+        //if condition is needed to ensure the whole list is not removed if accidentally li is clicked outside of the image
+        if(event.target.tagName == 'IMG'){
+            console.log(event.target.id);
+            let removePic = event.target.parentNode
+            removePic.remove()
+            //removePic.parentNode.removeChild(removePic) // both work
+        }
+    }, false)
+</script>
+</html>
