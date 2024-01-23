@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello</h1>
+  <button id="stop">Stop</button>
+</body>
+<script>
+  // setTimeout(function(){
+  //  console.log("Stopped");
+  // }, 2000)
+  // handler function can be directly given inside setTimeout or its reference can be given 
+  // const sayStop = function (){
+  //  console.log("Stopped");
+  // }
+  const changeText = function(){
+    document.querySelector('h1').innerHTML = "Hi"
+  }
+  const change = setTimeout(changeText, 2000)
+
+  document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(change);
+    console.log("stopped");
+  })
+
+  
+</script>
+</html>
