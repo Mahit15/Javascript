@@ -18,15 +18,14 @@
     //    setInterval(sayDate, 1000, "Mahit")
     //} //third parameter is passed as argument to handler function
     // clearInterval(intervalID)
-    document.querySelector('#start').addEventListener('click', function(event){
-        const intervalID = setInterval(sayDate, 1000, "Mahit");
+    let intervalID;
+    document.querySelector('#start').addEventListener('click', function(){
+        intervalID = setInterval(sayDate, 1000, "Mahit");
         console.log("Started")
-        if(event){
-            document.querySelector('#stop').addEventListener('click', function(){
+    })
+    document.querySelector('#stop').addEventListener('click', function(){
             clearInterval(intervalID)
             console.log("Stopped")
-    })
-    }     
     })
     
 
