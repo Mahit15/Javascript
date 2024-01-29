@@ -5,7 +5,7 @@ class User {
     }
     // getter - for accessing a value outside of class
     // setter - for setting a value inside the class
-    // _ is added to variable name to make sure constructor and setter dont clash for setting value
+    // _ is added to variable name to make sure constructor and setter dont clash for setting value, it is convention for private variable
     get password(){
       return `${this._password} Password` // this will be returned if someone acceses "password"
     }
