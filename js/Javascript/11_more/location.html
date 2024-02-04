@@ -6,20 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <p id="para">
-            
-        </p>
+    <div id="div">
+        
     </div>
 </body>
 <script>
-    console.log(navigator)
+    const div = document.getElementById("div")
     if("geolocation" in navigator){
-        const location = navigator.geolocation.getCurrentPosition((position) => {
-            console.log(position.coords.latitude);
-            console.log(position.coords.longitude);
-        })
+        navigator.geolocation.getCurrentPosition(showLocation)
     } else {
+        div.innerHTML = `Error in getting location`
+    }
+    function showLocation(position){
+        div.innerHTML = `Latitude is ${position.coords.latitude}\nLongitude is ${position.coords.longitude}`;
     }
 </script>
 </html>
